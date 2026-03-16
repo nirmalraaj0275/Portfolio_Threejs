@@ -13,8 +13,12 @@ import Ktig from "../assets/projects/ktig.png";
 import KovaiTechnidhi from "../assets/projects/kovaitechnidhi.png";
 import BrAcademy from "../assets/projects/bracademy.png";
 
+import { useNavigate } from "react-router-dom";
+
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
+
+  const navigate = useNavigate();
 
   const projects = [
     {
@@ -132,6 +136,7 @@ const Projects = () => {
           {visibleProjects.map((p) => (
             <div
               key={p.id}
+               onClick={() => navigate(`/project/${p.id}`)}
               className={`
                 relative group rounded-xl overflow-hidden cursor-pointer 
                 border border-white/10 transition duration-300 
